@@ -11,6 +11,7 @@ module.exports = {
     extend: {},
     colors: {
       'primaryblue': '#3563E9',
+      'deepblack': '#1A202C',
       ...colors,
     },
     container: {

@@ -1,4 +1,5 @@
 import addImage from '../assets/imgs/Ads.jpg';
+import logoSvg from '../assets/svgs/morent-logo.svg';
 
 function HomePage() {
   return (
@@ -8,7 +9,7 @@ function HomePage() {
         {/* logo and avatar */}
         <div className="flex justify-between">
           <a href="#">
-            {logoSvg}
+            <img src={logoSvg} alt="logo" />
           </a>
           <button data-collapse-toggle="navbar-default" type="button" className="inline-flex md:hidden" aria-controls="navbar-default" aria-expanded="false">
             <div className="h-8 w-8 rounded-full bg-slate-400">
@@ -43,10 +44,88 @@ function HomePage() {
         </div>
       </div>
     </header>
+    <main className='pt-8'>
+      {/* date filter */}
+      <div className='flex flex-col container'>
+        {/* pick-up filter */}
+        <div className='bg-white p-4 drop-shadow rounded-lg'>
+          <div className='mb-6'>
+            <span className='inline-block w-2 h-2 mr-3 bg-primaryblue ring-4 ring-opacity-30 ring-primaryblue rounded-full'></span>
+            <span className='text-base font-medium text-deepblack'>Pick - Up</span>
+          </div>
+          <div className='flex divide-x'>
+            <div className='flex-auto px-4'>
+              <p className='text-base font-bold text-deepblack pb-2'>Locations</p>
+              <p className='text-xs text-slate-400 flex items-center cursor-pointer'>
+                Semarang
+                <span className='inline-block ml-1'>
+                <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.0003 8.3997c-.35 0-.7-.135-.965-.4l-3.26-3.26c-.145-.145-.145-.385 0-.53.145-.145.385-.145.53 0l3.26 3.26c.24.24.63.24.87 0l3.26-3.26c.145-.145.385-.145.53 0 .145.145.145.385 0 .53l-3.26 3.26c-.265.265-.615.4-.965.4Z" fill="#1A202C" stroke="#1A202C" stroke-width=".5"/></svg>
+                </span>
+              </p>
+            </div>
+            <div className='flex-auto px-4'>
+              <p className='text-base font-bold text-deepblack pb-2'>Date</p>
+              <p className='text-xs text-slate-400 flex items-center cursor-pointer'>
+                20 Jul 2022
+                <span className='inline-block ml-1'>
+                <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.0003 8.3997c-.35 0-.7-.135-.965-.4l-3.26-3.26c-.145-.145-.145-.385 0-.53.145-.145.385-.145.53 0l3.26 3.26c.24.24.63.24.87 0l3.26-3.26c.145-.145.385-.145.53 0 .145.145.145.385 0 .53l-3.26 3.26c-.265.265-.615.4-.965.4Z" fill="#1A202C" stroke="#1A202C" stroke-width=".5"/></svg>
+                </span>
+              </p>
+            </div>
+            <div className='flex-auto px-4'>
+              <p className='text-base font-bold text-deepblack pb-2'>Time</p>
+              <p className='text-xs text-slate-400 flex items-center cursor-pointer'>
+                07:00
+                <span className='inline-block ml-1'>
+                <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.0003 8.3997c-.35 0-.7-.135-.965-.4l-3.26-3.26c-.145-.145-.145-.385 0-.53.145-.145.385-.145.53 0l3.26 3.26c.24.24.63.24.87 0l3.26-3.26c.145-.145.385-.145.53 0 .145.145.145.385 0 .53l-3.26 3.26c-.265.265-.615.4-.965.4Z" fill="#1A202C" stroke="#1A202C" stroke-width=".5"/></svg>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className='p-4 bg-primaryblue text-white grow-0 self-center rounded-lg -my-4 z-10'>
+          <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.1605 3.8358v13.6178M3.0827 7.9319l4.0778-4.0967 4.0778 4.0967M17.0887 20.1671V6.5493M21.1665 16.071l-4.0778 4.0967-4.0778-4.0967" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        {/* Drop-off filter */}
+        <div className='bg-white p-4 drop-shadow rounded-lg mb-8'>
+          <div className='mb-6'>
+            <span className='inline-block w-2 h-2 mr-3 bg-primaryblue ring-4 ring-opacity-30 ring-primaryblue rounded-full'></span>
+            <span className='text-base font-medium text-deepblack'>Pick - Up</span>
+          </div>
+          <div className='flex divide-x'>
+            <div className='flex-auto px-4'>
+              <p className='text-base font-bold text-deepblack pb-2'>Locations</p>
+              <p className='text-xs text-slate-400 flex items-center cursor-pointer'>
+                Semarang
+                <span className='inline-block ml-1'>
+                <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.0003 8.3997c-.35 0-.7-.135-.965-.4l-3.26-3.26c-.145-.145-.145-.385 0-.53.145-.145.385-.145.53 0l3.26 3.26c.24.24.63.24.87 0l3.26-3.26c.145-.145.385-.145.53 0 .145.145.145.385 0 .53l-3.26 3.26c-.265.265-.615.4-.965.4Z" fill="#1A202C" stroke="#1A202C" stroke-width=".5"/></svg>
+                </span>
+              </p>
+            </div>
+            <div className='flex-auto px-4'>
+              <p className='text-base font-bold text-deepblack pb-2'>Date</p>
+              <p className='text-xs text-slate-400 flex items-center cursor-pointer'>
+                20 Jul 2022
+                <span className='inline-block ml-1'>
+                <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.0003 8.3997c-.35 0-.7-.135-.965-.4l-3.26-3.26c-.145-.145-.145-.385 0-.53.145-.145.385-.145.53 0l3.26 3.26c.24.24.63.24.87 0l3.26-3.26c.145-.145.385-.145.53 0 .145.145.145.385 0 .53l-3.26 3.26c-.265.265-.615.4-.965.4Z" fill="#1A202C" stroke="#1A202C" stroke-width=".5"/></svg>
+                </span>
+              </p>
+            </div>
+            <div className='flex-auto px-4'>
+              <p className='text-base font-bold text-deepblack pb-2'>Time</p>
+              <p className='text-xs text-slate-400 flex items-center cursor-pointer'>
+                07:00
+                <span className='inline-block ml-1'>
+                <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.0003 8.3997c-.35 0-.7-.135-.965-.4l-3.26-3.26c-.145-.145-.145-.385 0-.53.145-.145.385-.145.53 0l3.26 3.26c.24.24.63.24.87 0l3.26-3.26c.145-.145.385-.145.53 0 .145.145.145.385 0 .53l-3.26 3.26c-.265.265-.615.4-.965.4Z" fill="#1A202C" stroke="#1A202C" stroke-width=".5"/></svg>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
     </>
   )
 }
-
-const logoSvg = <svg width="103" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M.728 19V1.12h3.12l6.696 9.096H9.056l6.552-9.096h3.12V19H15.44V4.84l1.272.312L9.92 14.2h-.384L2.912 5.152l1.08-.312V19H.728Zm30.2299.288c-1.312 0-2.536-.232-3.672-.696-1.136-.464-2.128-1.112-2.976-1.944-.848-.832-1.512-1.808-1.992-2.928-.464-1.136-.696-2.36-.696-3.672 0-1.328.232-2.552.696-3.672.464-1.12 1.12-2.096 1.968-2.928.848-.832 1.84-1.472 2.976-1.92 1.136-.464 2.368-.696 3.696-.696 1.328 0 2.56.232 3.696.696 1.136.464 2.128 1.112 2.976 1.944.848.816 1.504 1.784 1.968 2.904.48 1.12.72 2.344.72 3.672 0 1.312-.24 2.536-.72 3.672-.48 1.12-1.144 2.096-1.992 2.928-.848.832-1.84 1.48-2.976 1.944-1.12.464-2.344.696-3.672.696Zm0-2.976c.88 0 1.688-.152 2.424-.456.736-.32 1.376-.76 1.92-1.32.56-.56.984-1.224 1.272-1.992.304-.768.456-1.6.456-2.496 0-.896-.152-1.72-.456-2.472-.288-.768-.712-1.432-1.272-1.992-.544-.576-1.184-1.016-1.92-1.32-.736-.304-1.544-.456-2.424-.456-.864 0-1.664.152-2.4.456-.736.304-1.384.744-1.944 1.32-.544.56-.968 1.224-1.272 1.992-.304.752-.456 1.576-.456 2.472 0 .896.152 1.728.456 2.496.304.768.728 1.432 1.272 1.992.56.56 1.208 1 1.944 1.32.736.304 1.536.456 2.4.456ZM43.2202 19V1.12h6.648c1.216 0 2.288.224 3.216.672.944.432 1.68 1.072 2.208 1.92.528.832.792 1.848.792 3.048 0 1.232-.296 2.28-.888 3.144-.576.864-1.36 1.504-2.352 1.92L56.9482 19h-3.696l-4.392-7.848 2.112 1.248h-4.488V19h-3.264Zm3.264-9.48h3.432c.592 0 1.104-.112 1.536-.336.432-.24.768-.568 1.008-.984.24-.416.36-.896.36-1.44 0-.56-.12-1.04-.36-1.44-.24-.416-.576-.736-1.008-.96-.432-.24-.944-.36-1.536-.36h-3.432v5.52ZM59.0874 19V1.12h11.88V4h-8.616v4.584h8.136v2.88h-8.136v4.656h8.616V19h-11.88Zm14.2734 0V1.12h2.544l9.84 13.248-1.32.264V1.12h3.264V19h-2.568l-9.696-13.344 1.2-.264V19h-3.264Zm20.9571 0V4h-4.632V1.12h12.4801V4h-4.5601v15h-3.288Z" fill="#3563E9"/></svg>;
 
 export default HomePage
