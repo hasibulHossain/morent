@@ -8,6 +8,21 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    screens: {
+      'sm': '400px',
+      // => @media (min-width: 640px) { ... }
+
+      'md': '400px',
+      // => @media (min-width: 768px) { ... }
+
+      'lg': '400px',
+      // => @media (min-width: 1024px) { ... }
+
+      'xl': '400px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '400px',
+    },
     extend: {},
     colors: {
       'primaryblue': '#3563E9',
