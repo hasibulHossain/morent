@@ -8,25 +8,17 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    screens: {
-      'sm': '400px',
-      // => @media (min-width: 640px) { ... }
-
-      'md': '400px',
-      // => @media (min-width: 768px) { ... }
-
-      'lg': '400px',
-      // => @media (min-width: 1024px) { ... }
-
-      'xl': '400px',
-      // => @media (min-width: 1280px) { ... }
-
-      '2xl': '400px',
+    extend: {
+      backgroundImage: {
+        'ads-1': "url('./assets/imgs/Ads.jpg')",
+        'ads-1-large': "url('./assets/imgs/ads-1-lg.jpg')",
+        'ads-2-large': "url('./assets/imgs/ads-2-lg.jpg')",
+      }
     },
-    extend: {},
     colors: {
       'primaryblue': '#3563E9',
       'deepblack': '#1A202C',
+      'navy': '#3D5278',
       ...colors,
     },
     container: {
@@ -34,8 +26,8 @@ module.exports = {
       padding: {
         DEFAULT: '1.5rem',
         sm: '2rem',
-        lg: '4rem',
-        xl: '5rem',
+        lg: '2rem',
+        xl: '2rem',
         '2xl': '6rem',
       },
     },

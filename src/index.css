@@ -3,3 +3,18 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+
+/* .ads-1 {
+    background: skyblue;
+    background-image: url("small-landscape-750x536.jpg");
+    background-image: -webkit-image-set(
+      url("small-landscape-750x536.jpg") 1x,
+      url("large-landscape-2048x1536.jpg") 2x);
+    background-image: image-set(
+      url("small-landscape-750x536.jpg") 1x,
+      url("large-landscape-2048x1536.jpg") 2x);
+    background-image: image-set(
+      url("small-landscape-750x536.jpg") 750w,
+      url("large-landscape-2048x1536.jpg") 20480w);
+  } */
