@@ -1,8 +1,9 @@
-import addImage from '../assets/imgs/Ads.jpg';
 import logoSvg from '../assets/svgs/morent-logo.svg';
-import carImg from '../assets/imgs/car.png';
 import carSuvImg from '../assets/imgs/car-suv.png';
 import Button from '../components/button/button';
+import ProductCard from '../components/product-card/product-card';
+import ProductCardBig from '../components/product-card-big/product-card-big';
+import SectionTitle from '../components/section-title/section-title';
 
 function HomePage() {
   return (
@@ -87,11 +88,11 @@ function HomePage() {
         </div>
       </div>
     </header>
-    <main className='pt-8'>
+    <main className='pt-8 lg:pt-16'>
       {/* date filter */}
-      <div className='flex flex-col container'>
+      <div className='flex flex-col container lg:flex-row'>
         {/* pick-up filter */}
-        <div className='bg-white p-4 drop-shadow rounded-lg'>
+        <div className='bg-white p-4 drop-shadow rounded-lg lg:flex-auto'>
           <div className='mb-6'>
             <span className='inline-block w-2 h-2 mr-3 bg-primaryblue ring-4 ring-opacity-30 ring-primaryblue rounded-full'></span>
             <span className='text-base font-medium text-deepblack'>Pick - Up</span>
@@ -126,11 +127,11 @@ function HomePage() {
             </div>
           </div>
         </div>
-        <div className='p-4 bg-primaryblue drop-shadow text-white grow-0 self-center rounded-lg -my-4 z-10'>
+        <div className='p-4 bg-primaryblue drop-shadow text-white grow-0 self-center rounded-lg -my-4 z-10 lg:my-0 lg:mx-11'>
           <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.1605 3.8358v13.6178M3.0827 7.9319l4.0778-4.0967 4.0778 4.0967M17.0887 20.1671V6.5493M21.1665 16.071l-4.0778 4.0967-4.0778-4.0967" stroke="currentcolor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
         </div>
         {/* Drop-off filter */}
-        <div className='bg-white p-4 drop-shadow rounded-lg'>
+        <div className='bg-white p-4 drop-shadow rounded-lg lg:flex-auto'>
           <div className='mb-6'>
             <span className='inline-block w-2 h-2 mr-3 bg-primaryblue ring-4 ring-opacity-30 ring-primaryblue rounded-full'></span>
             <span className='text-base font-medium text-deepblack'>Pick - Up</span>
@@ -167,348 +168,56 @@ function HomePage() {
         </div>
       </div>
       {/* title */}
-      <div className='container flex justify-between items-center mt-8 mb-5'>
-        <span className='inline-block text-slate-500 font-medium text-sm capitalize'>Popular car</span>
-        <a href="#" className='inline-block text-primaryblue text-xs font-medium'>
-          view all
-        </a>
-      </div>
+      <SectionTitle title='Popular car' />
 
       {/* popular car slider */}
       <div className='container'>
         <div className='flex gap-5 overflow-hidden'>
           {/* car card */}
-          <div className="w-60 grow-0 shrink-0 bg-white rounded-lg p-4 m-0.5 drop-shadow">
-            <div className='flex justify-between mb-8'>
-              <div>
-                <p className='text-deepblack font-bold text-base capitalize tracking-tighter pb-1'>koeniggsegg</p>
-                <p className='text-xs text-slate-400'>Sport</p>
-              </div>
-              <div className='text-red-600'>
-                {loveIcon}
-              </div>
-            </div>
-            {/* image */}
-            <div className='flex justify-center mb-11'>
-              <div className='relative w-44'>
-                <img className='w-full' src={carImg} alt="car" />
-                {/* car shadow */}
-                <div className='absolute -bottom-6 w-[110%] h-full bg-gradient-to-t from-white'></div>
-              </div>
-            </div>
-            {/* Specification */}
-            <div className='flex justify-between mb-7'>
-              <div className='flex text-slate-400'>
-                <span className='inline-block w-3.5 h-3.5 mr-1'>
-                  {gasIcon}
-                </span>
-                <span className='text-xs font-medium'>
-                  90L
-                </span>
-              </div>
-              <div className='flex text-slate-400'>
-                <span className='inline-block w-3.5 h-3.5 mr-1'>
-                  {gasIcon}
-                </span>
-                <span className='text-xs font-medium'>
-                  Manual
-                </span>
-              </div>
-              <div className='flex text-slate-400'>
-                <span className='inline-block w-3.5 h-3.5 mr-1'>
-                  {userIcon}
-                </span>
-                <span className='text-xs font-medium'>
-                  People
-                </span>
-              </div>
-            </div>
-            <div className="flex justify-between items-center">
-              <div>
-                <span className='text-base text-deepblack font-bold'>$99.00/ </span>
-                <span className='text-xs text-slate-400'>day</span>
-              </div>
-              <Button onClick={() => {}}>
-                rental now
-              </Button>
-            </div>
-          </div>
-          <div className="w-60 grow-0 shrink-0 bg-white rounded-lg p-4 m-0.5 drop-shadow">
-            <div className='flex justify-between mb-8'>
-              <div>
-                <p className='text-deepblack font-bold text-base capitalize tracking-tighter pb-1'>koeniggsegg</p>
-                <p className='text-xs text-slate-400'>Sport</p>
-              </div>
-              <div className='text-red-600'>
-                {loveIcon}
-              </div>
-            </div>
-            {/* image */}
-            <div className='flex justify-center mb-11'>
-              <div className='relative w-44'>
-                <img className='w-full' src={carImg} alt="car" />
-                {/* car shadow */}
-                <div className='absolute -bottom-6 w-[110%] h-full bg-gradient-to-t from-white'></div>
-              </div>
-            </div>
-            {/* Specification */}
-            <div className='flex justify-between mb-7'>
-              <div className='flex text-slate-400'>
-                <span className='inline-block w-3.5 h-3.5 mr-1'>
-                  {gasIcon}
-                </span>
-                <span className='text-xs font-medium'>
-                  90L
-                </span>
-              </div>
-              <div className='flex text-slate-400'>
-                <span className='inline-block w-3.5 h-3.5 mr-1'>
-                  {gasIcon}
-                </span>
-                <span className='text-xs font-medium'>
-                  Manual
-                </span>
-              </div>
-              <div className='flex text-slate-400'>
-                <span className='inline-block w-3.5 h-3.5 mr-1'>
-                  {userIcon}
-                </span>
-                <span className='text-xs font-medium'>
-                  People
-                </span>
-              </div>
-            </div>
-            <div className="flex justify-between items-center">
-              <div>
-                <span className='text-base text-deepblack font-bold'>$99.00/ </span>
-                <span className='text-xs text-slate-400'>day</span>
-              </div>
-              <Button onClick={() => {}}>
-                rental now
-              </Button>
-            </div>
-          </div>
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
         </div>
       </div>
 
       {/* title */}
-      <div className='container flex justify-between items-center mt-8 mb-5'>
-        <span className='inline-block text-slate-500 font-medium text-sm capitalize'>Recommended car</span>
-      </div>
+      <SectionTitle title='Recommended car' />
 
       {/* Recommended car list */}
       <div className="container">
-        <div className="flex flex-col gap-5">
-          {/* car card */}
-          <div className="min-w-fit w-full grow-0 shrink-0 bg-white rounded-lg p-4 drop-shadow">
-            <div className='flex justify-between mb-8'>
-              <div>
-                <p className='text-deepblack font-bold text-base capitalize tracking-tighter pb-1'>koeniggsegg</p>
-                <p className='text-xs text-slate-400'>Sport</p>
-              </div>
-              <div className='text-red-600'>
-                {loveIcon}
-              </div>
-            </div>
-            <div className='flex justify-between mb-8'>
-              <div className='w-44 relative'>
-                <img className='w-full' src={carSuvImg} alt="car" />
-              {/* car shadow */}
-                <div className='absolute flex-none top-11 w-[110%] h-4/6 bg-gradient-to-t from-white'></div>
-              </div>
-              {/* Specification */}
-              <div className='flex flex-col items-start justify-between'>
-                <div className='flex text-slate-400 pb-4'>
-                  <span className='inline-block w-3.5 h-3.5 mr-1'>
-                    {gasIcon}
-                  </span>
-                  <span className='text-xs font-medium'>
-                    90L
-                  </span>
-                </div>
-                <div className='flex text-slate-400 pb-4'>
-                  <span className='inline-block w-3.5 h-3.5 mr-1'>
-                    {gasIcon}
-                  </span>
-                  <span className='text-xs font-medium'>
-                    Manual
-                  </span>
-                </div>
-                <div className='flex text-slate-400 pb-4'>
-                  <span className='inline-block w-3.5 h-3.5 mr-1'>
-                    {userIcon}
-                  </span>
-                  <span className='text-xs font-medium'>
-                    6 People
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex justify-between items-center">
-              <div>
-                <div>
-                  <span className='text-base text-deepblack font-bold'>$99.00/ </span>
-                  <span className='text-xs text-slate-400'>day</span>
-                </div>
-                <div>
-                  <span className='text-xs text-slate-400 line-through font-medium'>$90.00</span>
-                </div>
-              </div>
-              <Button onClick={() => {}}>
-                rental now
-              </Button>
-            </div>
-          </div>
-          {/* car card */}
-          <div className="min-w-fit w-full grow-0 shrink-0 bg-white rounded-lg p-4 drop-shadow">
-            <div className='flex justify-between mb-8'>
-              <div>
-                <p className='text-deepblack font-bold text-base capitalize tracking-tighter pb-1'>koeniggsegg</p>
-                <p className='text-xs text-slate-400'>Sport</p>
-              </div>
-              <div className='text-red-600'>
-                {loveIcon}
-              </div>
-            </div>
-            <div className='flex justify-between mb-8'>
-              <div className='w-44 relative'>
-                <img className='w-full' src={carSuvImg} alt="car" />
-              {/* car shadow */}
-                <div className='absolute flex-none top-11 w-[110%] h-4/6 bg-gradient-to-t from-white'></div>
-              </div>
-              {/* Specification */}
-              <div className='flex flex-col items-start justify-between'>
-                <div className='flex text-slate-400 pb-4'>
-                  <span className='inline-block w-3.5 h-3.5 mr-1'>
-                    {gasIcon}
-                  </span>
-                  <span className='text-xs font-medium'>
-                    90L
-                  </span>
-                </div>
-                <div className='flex text-slate-400 pb-4'>
-                  <span className='inline-block w-3.5 h-3.5 mr-1'>
-                    {gasIcon}
-                  </span>
-                  <span className='text-xs font-medium'>
-                    Manual
-                  </span>
-                </div>
-                <div className='flex text-slate-400 pb-4'>
-                  <span className='inline-block w-3.5 h-3.5 mr-1'>
-                    {userIcon}
-                  </span>
-                  <span className='text-xs font-medium'>
-                    6 People
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex justify-between items-center">
-              <div>
-                <div>
-                  <span className='text-base text-deepblack font-bold'>$99.00/ </span>
-                  <span className='text-xs text-slate-400'>day</span>
-                </div>
-                <div>
-                  <span className='text-xs text-slate-400 line-through font-medium'>$90.00</span>
-                </div>
-              </div>
-              <Button onClick={() => {}}>
-                rental now
-              </Button>
-            </div>
-          </div>
-          {/* car card */}
-          <div className="min-w-fit w-full grow-0 shrink-0 bg-white rounded-lg p-4 drop-shadow">
-            <div className='flex justify-between mb-8'>
-              <div>
-                <p className='text-deepblack font-bold text-base capitalize tracking-tighter pb-1'>koeniggsegg</p>
-                <p className='text-xs text-slate-400'>Sport</p>
-              </div>
-              <div className='text-red-600'>
-                {loveIcon}
-              </div>
-            </div>
-            <div className='flex justify-between mb-8'>
-              <div className='w-44 relative'>
-                <img className='w-full' src={carSuvImg} alt="car" />
-              {/* car shadow */}
-                <div className='absolute flex-none top-11 w-[110%] h-4/6 bg-gradient-to-t from-white'></div>
-              </div>
-              {/* Specification */}
-              <div className='flex flex-col items-start justify-between'>
-                <div className='flex text-slate-400 pb-4'>
-                  <span className='inline-block w-3.5 h-3.5 mr-1'>
-                    {gasIcon}
-                  </span>
-                  <span className='text-xs font-medium'>
-                    90L
-                  </span>
-                </div>
-                <div className='flex text-slate-400 pb-4'>
-                  <span className='inline-block w-3.5 h-3.5 mr-1'>
-                    {gasIcon}
-                  </span>
-                  <span className='text-xs font-medium'>
-                    Manual
-                  </span>
-                </div>
-                <div className='flex text-slate-400 pb-4'>
-                  <span className='inline-block w-3.5 h-3.5 mr-1'>
-                    {userIcon}
-                  </span>
-                  <span className='text-xs font-medium'>
-                    6 People
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex justify-between items-center">
-              <div>
-                <div>
-                  <span className='text-base text-deepblack font-bold'>$99.00/ </span>
-                  <span className='text-xs text-slate-400'>day</span>
-                </div>
-                <div>
-                  <span className='text-xs text-slate-400 line-through font-medium'>$90.00</span>
-                </div>
-              </div>
-              <Button onClick={() => {}}>
-                rental now
-              </Button>
-            </div>
-          </div>
+        <div className="flex flex-col gap-5 lg:flex-row">
+          <ProductCardBig />
+          <ProductCardBig />
         </div>
       </div>
 
       <div className='container py-12'>
         <div className='flex justify-end'>
           <div className='w-3/5 flex justify-between items-center'>
-          <Button onClick={() => {}}>
-                show more car
-              </Button>
+            <Button onClick={() => {}}>
+              show more car
+            </Button>
             <span className='inline-block text-slate-500 font-medium text-sm capitalize'>120 car</span>
           </div>
         </div>
       </div>
 
-      <div className='container pb-12'>
-        <div className='w-5/6'>
-          <div className='pb-4'>
-            <img src={logoSvg} alt="logo" />
-          </div>
-          <p className='text-slate-500 font-medium text-xs capitalize'>
-            Our vision is to provide convenience and help increase your business.
-          </p>
-        </div>
-      </div>
 
-      <footer className='container'>
-        <div className='flex gap-6 flex-wrap'>
+    </main>
+    <footer className='lg:bg-white lg:pt-16'>
+      <div className='container'>
+        <div className='flex gap-6 flex-wrap lg:border-b lg:border-slate-200 lg:pb-12'>
+          <div className='flex-auto md:basis-full lg:basis-auto'>
+            <div className='w-5/6 lg:w-[70%]'>
+              <div className='pb-4'>
+                <img src={logoSvg} alt="logo" />
+              </div>
+              <p className='text-slate-500 font-medium text-xs capitalize'>
+                Our vision is to provide convenience and help increase your business.
+              </p>
+            </div>
+          </div>
           <div className='flex-auto'>
             <h3 className='text-deepblack text-lg font-bold pb-4'>About</h3>
             <ul>
@@ -547,8 +256,8 @@ function HomePage() {
         <div className='mb-6'>
           <p className='text-deepblack font-medium text-xs'>©2022 MORENT. All rights reserved</p>
         </div>
-      </footer>
-    </main>
+      </div>
+    </footer>
     </>
   )
 }
