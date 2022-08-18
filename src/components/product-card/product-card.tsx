@@ -3,7 +3,7 @@ import carImg from '../../assets/imgs/car.png';
 
 function ProductCard() {
   return (
-    <div className="min-w-fit grow-0 shrink-0 bg-white rounded-lg p-4 m-0.5 drop-shadow lg:p-6 lg:w-full">
+    <div className="min-w-fit grow-0 shrink-0 bg-white rounded-lg p-4 drop-shadow lg:p-6 lg:w-full">
     <div className='flex justify-between mb-8 lg:mb-16'>
       <div>
         <p className='text-deepblack font-bold text-base capitalize tracking-tighter pb-1 lg:text-xl'>koeniggsegg</p>
@@ -53,7 +53,7 @@ function ProductCard() {
         <span className='text-base text-deepblack font-bold lg:text-xl'>$99.00/ </span>
         <span className='text-xs text-slate-400 lg:text-sm'>day</span>
       </div>
-      <Button onClick={() => {}}>
+      <Button classes="md:px-3 md:py-2" onClick={() => {}}>
         rental now
       </Button>
     </div>

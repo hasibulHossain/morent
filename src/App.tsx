@@ -2,6 +2,7 @@ import AllCars from "./pages/all-cars";
 import HomePage from "./pages/home-page";
 import Login from "./pages/login-page";
 import React, {useRef, useState} from "react";
+import CarDetails from "./pages/car-details";
 
 interface State {
   isFilterOpen: boolean;
@@ -31,7 +32,8 @@ function App() {
     <AppContext.Provider value={state}>
       {/* // <Login /> */}
       {/* // <HomePage /> */}
-      <AllCars />
+      {/* <AllCars /> */}
+      <CarDetails />
     </AppContext.Provider>
   )
 }

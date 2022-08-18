@@ -13,6 +13,7 @@ module.exports = {
         'ads-1': "url('./assets/imgs/Ads.jpg')",
         'ads-1-large': "url('./assets/imgs/ads-1-lg.jpg')",
         'ads-2-large': "url('./assets/imgs/ads-2-lg.jpg')",
+        'details-car-sm': "url('./assets/imgs/details-car-sm.jpg')",
       }
     },
     colors: {
