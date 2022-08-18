@@ -1,68 +1,17 @@
-import logoSvg from '../assets/svgs/morent-logo.svg';
+
 import carSuvImg from '../assets/imgs/car-suv.png';
 import Button from '../components/button/button';
 import ProductCard from '../components/product-card/product-card';
 import ProductCardBig from '../components/product-card-big/product-card-big';
 import SectionTitle from '../components/section-title/section-title';
+import Navbar from '../components/navbar/navbar';
+import Filter from '../components/filter/filter';
+import Footer from '../components/footer/footer';
 
 function HomePage() {
   return (
     <>
-    <nav className="bg-white lg:border-b lg:border-slate-200">
-      <div className='container'>
-        <div className="flex py-8 lg:items-center lg:gap-10">
-          {/* logo and avatar */}
-          <div className="flex flex-auto flex-wrap justify-between lg:justify-start lg:items-center lg:flex-nowrap">
-            <div className='lg:w-36 lg:mr-16'>
-              <a href="#" className='inline-block w-full'>
-                <img className='w-full' src={logoSvg} alt="logo" />
-              </a>
-            </div>
-            {/* search and filter */}
-            <div className="flex order-last basis-full mt-8 lg:m-0 lg:basis-3/5">
-              <div className="flex grow items-center py-3 px-6 border border-slate-200 text-slate-700 rounded-lg lg:rounded-full">
-                {searchIcon}
-                <span className="text-sm pl-6">
-                  Search something here
-                </span>
-              </div>
-              <div className="flex-none items-center p-3 ml-3 border border-slate-200 rounded-lg text-slate-700 lg:hidden">
-                {filterIcon}
-              </div>
-            </div>
-
-            <button data-collapse-toggle="navbar-default" type="button" className="inline-flex lg:hidden" aria-controls="navbar-default" aria-expanded="false">
-              {/* avatar */}
-              <div className="h-8 w-8 rounded-full bg-slate-400">
-              </div>
-            </button>
-          </div>
-
-
-          {/* nav right side on desktop:lg */}
-          <div className='hidden lg:flex lg: gap-5'>
-            <button data-collapse-toggle="navbar-default" type="button" className="hidden text-navy lg:block lg:p-3 lg:border lg:rounded-full lg:border-slate-200 lg:hover:text-primaryblue lg:hover:bg-primaryblue/5" aria-controls="navbar-default" aria-expanded="false">
-              {loveIcon}
-            </button>
-
-            <button data-collapse-toggle="navbar-default" type="button" className="hidden relative text-navy lg:block lg:p-3 lg:border lg:rounded-full lg:border-slate-200 lg:hover:text-primaryblue lg:hover:bg-primaryblue/5" aria-controls="navbar-default" aria-expanded="false">
-              {bellIcon}
-              <span className="absolute inline-flex rounded-full h-3 w-3 top-0 right-0 bg-red-500"></span>
-            </button>
-
-            <button data-collapse-toggle="navbar-default" type="button" className="hidden text-navy lg:block lg:p-3 lg:border lg:rounded-full lg:border-slate-200 lg:hover:text-primaryblue lg:hover:bg-primaryblue/5" aria-controls="navbar-default" aria-expanded="false">
-              {gearIcon}
-            </button>
-
-            <button data-collapse-toggle="navbar-default" type="button" className="hidden lg:block" aria-controls="navbar-default" aria-expanded="false">
-              {/* avatar */}
-              <div className="h-11 w-11 rounded-full bg-slate-400">
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
-    </nav>
+    <Navbar />
     {/* hero section */}
     <header className='pt-8'>
       <div className='container'>
@@ -90,82 +39,8 @@ function HomePage() {
     </header>
     <main className='pt-8 lg:pt-16'>
       {/* date filter */}
-      <div className='flex flex-col container lg:flex-row'>
-        {/* pick-up filter */}
-        <div className='bg-white p-4 drop-shadow rounded-lg lg:flex-auto'>
-          <div className='mb-6'>
-            <span className='inline-block w-2 h-2 mr-3 bg-primaryblue ring-4 ring-opacity-30 ring-primaryblue rounded-full'></span>
-            <span className='text-base font-medium text-deepblack'>Pick - Up</span>
-          </div>
-          <div className='flex divide-x'>
-            <div className='flex-auto px-4'>
-              <p className='text-base font-bold text-deepblack pb-2'>Locations</p>
-              <p className='text-xs text-slate-400 flex items-center cursor-pointer'>
-                Semarang
-                <span className='inline-block ml-1'>
-                <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.0003 8.3997c-.35 0-.7-.135-.965-.4l-3.26-3.26c-.145-.145-.145-.385 0-.53.145-.145.385-.145.53 0l3.26 3.26c.24.24.63.24.87 0l3.26-3.26c.145-.145.385-.145.53 0 .145.145.145.385 0 .53l-3.26 3.26c-.265.265-.615.4-.965.4Z" fill="#1A202C" stroke="#1A202C" strokeWidth=".5"/></svg>
-                </span>
-              </p>
-            </div>
-            <div className='flex-auto px-4'>
-              <p className='text-base font-bold text-deepblack pb-2'>Date</p>
-              <p className='text-xs text-slate-400 flex items-center cursor-pointer'>
-                20 Jul 2022
-                <span className='inline-block ml-1'>
-                <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.0003 8.3997c-.35 0-.7-.135-.965-.4l-3.26-3.26c-.145-.145-.145-.385 0-.53.145-.145.385-.145.53 0l3.26 3.26c.24.24.63.24.87 0l3.26-3.26c.145-.145.385-.145.53 0 .145.145.145.385 0 .53l-3.26 3.26c-.265.265-.615.4-.965.4Z" fill="#1A202C" stroke="#1A202C" strokeWidth=".5"/></svg>
-                </span>
-              </p>
-            </div>
-            <div className='flex-auto px-4'>
-              <p className='text-base font-bold text-deepblack pb-2'>Time</p>
-              <p className='text-xs text-slate-400 flex items-center cursor-pointer'>
-                07:00
-                <span className='inline-block ml-1'>
-                <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.0003 8.3997c-.35 0-.7-.135-.965-.4l-3.26-3.26c-.145-.145-.145-.385 0-.53.145-.145.385-.145.53 0l3.26 3.26c.24.24.63.24.87 0l3.26-3.26c.145-.145.385-.145.53 0 .145.145.145.385 0 .53l-3.26 3.26c-.265.265-.615.4-.965.4Z" fill="#1A202C" stroke="#1A202C" strokeWidth=".5"/></svg>
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className='p-4 bg-primaryblue drop-shadow text-white grow-0 self-center rounded-lg -my-4 z-10 lg:my-0 lg:mx-11'>
-          <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.1605 3.8358v13.6178M3.0827 7.9319l4.0778-4.0967 4.0778 4.0967M17.0887 20.1671V6.5493M21.1665 16.071l-4.0778 4.0967-4.0778-4.0967" stroke="currentcolor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-        </div>
-        {/* Drop-off filter */}
-        <div className='bg-white p-4 drop-shadow rounded-lg lg:flex-auto'>
-          <div className='mb-6'>
-            <span className='inline-block w-2 h-2 mr-3 bg-primaryblue ring-4 ring-opacity-30 ring-primaryblue rounded-full'></span>
-            <span className='text-base font-medium text-deepblack'>Pick - Up</span>
-          </div>
-          <div className='flex divide-x'>
-            <div className='flex-auto px-4'>
-              <p className='text-base font-bold text-deepblack pb-2'>Locations</p>
-              <p className='text-xs text-slate-400 flex items-center cursor-pointer'>
-                Semarang
-                <span className='inline-block ml-1'>
-                <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.0003 8.3997c-.35 0-.7-.135-.965-.4l-3.26-3.26c-.145-.145-.145-.385 0-.53.145-.145.385-.145.53 0l3.26 3.26c.24.24.63.24.87 0l3.26-3.26c.145-.145.385-.145.53 0 .145.145.145.385 0 .53l-3.26 3.26c-.265.265-.615.4-.965.4Z" fill="#1A202C" stroke="#1A202C" strokeWidth=".5"/></svg>
-                </span>
-              </p>
-            </div>
-            <div className='flex-auto px-4'>
-              <p className='text-base font-bold text-deepblack pb-2'>Date</p>
-              <p className='text-xs text-slate-400 flex items-center cursor-pointer'>
-                20 Jul 2022
-                <span className='inline-block ml-1'>
-                <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.0003 8.3997c-.35 0-.7-.135-.965-.4l-3.26-3.26c-.145-.145-.145-.385 0-.53.145-.145.385-.145.53 0l3.26 3.26c.24.24.63.24.87 0l3.26-3.26c.145-.145.385-.145.53 0 .145.145.145.385 0 .53l-3.26 3.26c-.265.265-.615.4-.965.4Z" fill="#1A202C" stroke="#1A202C" strokeWidth=".5"/></svg>
-                </span>
-              </p>
-            </div>
-            <div className='flex-auto px-4'>
-              <p className='text-base font-bold text-deepblack pb-2'>Time</p>
-              <p className='text-xs text-slate-400 flex items-center cursor-pointer'>
-                07:00
-                <span className='inline-block ml-1'>
-                <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.0003 8.3997c-.35 0-.7-.135-.965-.4l-3.26-3.26c-.145-.145-.145-.385 0-.53.145-.145.385-.145.53 0l3.26 3.26c.24.24.63.24.87 0l3.26-3.26c.145-.145.385-.145.53 0 .145.145.145.385 0 .53l-3.26 3.26c-.265.265-.615.4-.965.4Z" fill="#1A202C" stroke="#1A202C" strokeWidth=".5"/></svg>
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
+      <div className=''>
+        <Filter />
       </div>
       {/* title */}
       <SectionTitle title='Popular car' />
@@ -202,62 +77,8 @@ function HomePage() {
           </div>
         </div>
       </div>
-
-
     </main>
-    <footer className='lg:bg-white lg:pt-16'>
-      <div className='container'>
-        <div className='flex gap-6 flex-wrap lg:border-b lg:border-slate-200 lg:pb-12'>
-          <div className='flex-auto md:basis-full lg:basis-auto'>
-            <div className='w-5/6 lg:w-[70%]'>
-              <div className='pb-4'>
-                <img src={logoSvg} alt="logo" />
-              </div>
-              <p className='text-slate-500 font-medium text-xs capitalize'>
-                Our vision is to provide convenience and help increase your business.
-              </p>
-            </div>
-          </div>
-          <div className='flex-auto'>
-            <h3 className='text-deepblack text-lg font-bold pb-4'>About</h3>
-            <ul>
-              <li className='text-slate-400 text-sm pb-3'>How it works</li>
-              <li className='text-slate-400 text-sm pb-3'>Featured</li>
-              <li className='text-slate-400 text-sm pb-3'>Partnership</li>
-              <li className='text-slate-400 text-sm pb-3'>Business Relation</li>
-            </ul>
-          </div>
-          <div className='flex-auto'>
-            <h3 className='text-deepblack text-lg font-bold pb-4'>Community</h3>
-            <ul>
-              <li className='text-slate-400 text-sm pb-3'>Events</li>
-              <li className='text-slate-400 text-sm pb-3'>Blog</li>
-              <li className='text-slate-400 text-sm pb-3'>Podcast</li>
-              <li className='text-slate-400 text-sm pb-3'>Invite a friend</li>
-            </ul>
-          </div>
-          <div className='flex-auto'>
-            <h3 className='text-deepblack text-lg font-bold pb-4'>Socials</h3>
-            <ul>
-              <li className='text-slate-400 text-sm pb-3'>Instagram</li>
-              <li className='text-slate-400 text-sm pb-3'>Twitter</li>
-              <li className='text-slate-400 text-sm pb-3'>Facebook</li>
-            </ul>
-          </div>
-        </div>
-        <div className='pt-12 pb-8 flex justify-between'>
-          <span className='inline-block'>
-            <a className='text-deepblack font-medium text-xs' href="#">privacy policy</a>
-          </span>
-          <span className='inline-block'>
-            <a className='text-deepblack font-medium text-xs' href="#">terms & condition</a>
-          </span>
-        </div>
-        <div className='mb-6'>
-          <p className='text-deepblack font-medium text-xs'>©2022 MORENT. All rights reserved</p>
-        </div>
-      </div>
-    </footer>
+    <Footer />
     </>
   )
 }

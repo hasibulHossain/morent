@@ -24,7 +24,7 @@ module.exports = {
     container: {
       center: true,
       padding: {
-        DEFAULT: '1.5rem',
+        DEFAULT: '1rem',
         sm: '2rem',
         lg: '2rem',
         xl: '2rem',
@@ -35,5 +35,7 @@ module.exports = {
       'sans': ['Poppins, sans-serif', ...defaultTheme.fontFamily.sans],
     }
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 }
