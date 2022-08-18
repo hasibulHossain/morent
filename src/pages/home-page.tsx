@@ -47,7 +47,7 @@ function HomePage() {
 
       {/* popular car slider */}
       <div className='container'>
-        <div className='flex gap-5 overflow-hidden'>
+        <div className='flex gap-5 overflow-hidden p-[1px]'>
           {/* car card */}
           <ProductCard />
           <ProductCard />
