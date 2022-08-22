@@ -11,7 +11,6 @@ import Footer from '../components/footer/footer';
 function CarDetails() {
   return (
     <>
-        <Navbar />
         <div className='pt-8'>
             <div className='container flex flex-col gap-8 lg:flex-row'>
                 {/* left */}

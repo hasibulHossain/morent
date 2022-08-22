@@ -1,5 +1,6 @@
 import React from 'react'
 import logoSvg from '../../assets/svgs/morent-logo.svg';
+import Tooltip from '../tooltip/tooltip';
 
 function Navbar() {
   return (
@@ -26,8 +27,11 @@ function Navbar() {
                 Search something here
               </span>
             </div>
-            <div className="flex-none items-center p-3 ml-3 border border-slate-200 rounded-lg text-slate-700 lg:hidden">
+            <div className="group relative flex-none items-center p-3 ml-3 border border-slate-200 rounded-lg text-slate-700 cursor-pointer lg:hidden">
               {filterIcon}
+              <Tooltip>
+                Filter
+              </Tooltip>
             </div>
           </div>
 
@@ -41,17 +45,26 @@ function Navbar() {
 
         {/* nav right side on desktop:lg */}
         <div className='hidden lg:flex lg: gap-5'>
-          <button data-collapse-toggle="navbar-default" type="button" className="hidden text-navy lg:block lg:p-3 lg:border lg:rounded-full lg:border-slate-200 lg:hover:text-primaryblue lg:hover:bg-primaryblue/5" aria-controls="navbar-default" aria-expanded="false">
+          <button data-collapse-toggle="navbar-default" type="button" className="relative group hidden text-navy lg:block lg:p-3 lg:border lg:rounded-full lg:border-slate-200 lg:hover:text-primaryblue lg:hover:bg-primaryblue/5" aria-controls="navbar-default" aria-expanded="false">
             {loveIcon}
+            <Tooltip>
+              Favorite
+            </Tooltip>
           </button>
 
-          <button data-collapse-toggle="navbar-default" type="button" className="hidden relative text-navy lg:block lg:p-3 lg:border lg:rounded-full lg:border-slate-200 lg:hover:text-primaryblue lg:hover:bg-primaryblue/5" aria-controls="navbar-default" aria-expanded="false">
+          <button data-collapse-toggle="navbar-default" type="button" className="relative group hidden relative text-navy lg:block lg:p-3 lg:border lg:rounded-full lg:border-slate-200 lg:hover:text-primaryblue lg:hover:bg-primaryblue/5" aria-controls="navbar-default" aria-expanded="false">
             {bellIcon}
             <span className="absolute inline-flex rounded-full h-3 w-3 top-0 right-0 bg-red-500"></span>
+            <Tooltip>
+              Notification
+            </Tooltip>
           </button>
 
-          <button data-collapse-toggle="navbar-default" type="button" className="hidden text-navy lg:block lg:p-3 lg:border lg:rounded-full lg:border-slate-200 lg:hover:text-primaryblue lg:hover:bg-primaryblue/5" aria-controls="navbar-default" aria-expanded="false">
+          <button data-collapse-toggle="navbar-default" type="button" className="relative group hidden text-navy lg:block lg:p-3 lg:border lg:rounded-full lg:border-slate-200 lg:hover:text-primaryblue lg:hover:bg-primaryblue/5" aria-controls="navbar-default" aria-expanded="false">
             {gearIcon}
+            <Tooltip>
+              Settings
+            </Tooltip>
           </button>
 
           <button data-collapse-toggle="navbar-default" type="button" className="hidden lg:block" aria-controls="navbar-default" aria-expanded="false">

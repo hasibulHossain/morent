@@ -11,7 +11,6 @@ import Footer from '../components/footer/footer';
 function HomePage() {
   return (
     <>
-    <Navbar />
     {/* hero section */}
     <header className='pt-8'>
       <div className='container'>

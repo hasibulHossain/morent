@@ -18,7 +18,6 @@ function AllCars() {
   return (
     <>
         <main>
-            <Navbar />
             <div className='container flex gap-8'>
                 {
                     state.isFilterOpen && (

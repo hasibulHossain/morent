@@ -1,8 +1,15 @@
 import AllCars from "./pages/all-cars";
 import HomePage from "./pages/home-page";
 import Login from "./pages/login-page";
-import React, {useRef, useState} from "react";
+import React, {useState, useEffect} from "react";
 import CarDetails from "./pages/car-details";
+import Checkout from "./pages/checkout";
+import Layout from "./container/layout/layout";
+
+interface book {
+  id: string;
+  title: string;
+}
 
 interface State {
   isFilterOpen: boolean;
@@ -30,12 +37,16 @@ function App() {
 
   return (
     <AppContext.Provider value={state}>
-      {/* // <Login /> */}
-      {/* // <HomePage /> */}
-      {/* <AllCars /> */}
-      <CarDetails />
+      <Layout>
+        {/* // <Login /> */}
+        {/* // <HomePage /> */}
+        {/* <AllCars /> */}
+        {/* <CarDetails /> */}
+        <Checkout />
+      </Layout>
     </AppContext.Provider>
   )
 }
+
 
 export {App as default, AppContext};
