@@ -1,18 +1,14 @@
 import React from 'react'
 import Navbar from '../../components/navbar/navbar';
+import { Outlet } from 'react-router-dom';
 
-interface Props {
-    children: React.ReactNode;
-}
 
-const Layout:React.FC<Props> = ({ children }) => {
+const Layout:React.FC = () => {
   return (
     <>
         <Navbar />
         <main>
-            {
-                children
-            }
+          <Outlet />
         </main>
     </>
   )

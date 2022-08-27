@@ -7,7 +7,7 @@ interface Props {
 const Tooltip:React.FC<Props> = ({ children }) => {
 
   return (
-    <span className='group-hover:scale-100 group-hover:delay-500 delay-100 transition w-auto min-w-max absolute inline-block text-xs text-white bg-black scale-0 rounded-sm left-0 -bottom-3/4 px-2 py-1'>
+    <span className='group-hover:inline-block group-hover:opacity-100 group-hover:duration-75 group-hover:delay-500 inline-block transition duration-300 opacity-0 w-auto min-w-max absolute text-xs text-white bg-deepblack rounded-sm left-1/2 -bottom-3/4 -translate-x-1/2 px-2 py-1'>
         {
             children
         }
