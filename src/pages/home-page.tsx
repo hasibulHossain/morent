@@ -4,7 +4,6 @@ import ProductCard from '../components/product-card/product-card';
 import ProductCardBig from '../components/product-card-big/product-card-big';
 import SectionTitle from '../components/section-title/section-title';
 import Filter from '../components/filter/filter';
-import Footer from '../components/footer/footer';
 
 function HomePage() {
   return (
@@ -75,7 +74,6 @@ function HomePage() {
         </div>
       </div>
     </main>
-    <Footer />
     </>
   )
 }

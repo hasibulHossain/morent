@@ -1,12 +1,9 @@
-import React from 'react'
-import Navbar from '../components/navbar/navbar';
 import detailsCar from '../assets/imgs/details-car-sm.jpg';
 import detailsCarLg from '../assets/imgs/ads-2-lg.jpg';
 import Button from '../components/button/button';
 import TextButton from '../components/button/text-button';
 import SectionTitle from '../components/section-title/section-title';
 import ProductCard from '../components/product-card/product-card';
-import Footer from '../components/footer/footer';
 
 function CarDetails() {
   return (
@@ -173,7 +170,6 @@ function CarDetails() {
             </div>
         </div>
         <div className='mt-12'></div>
-        <Footer />
     </>
   )
 };

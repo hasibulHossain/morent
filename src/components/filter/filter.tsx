@@ -1,7 +1,7 @@
 import React, {useContext, useRef, useState} from 'react'
 import classNames from 'classnames'
 import { AppContext } from '../../App'
-import Select, {StylesConfig} from 'react-select';
+import Select, {StylesConfig, SelectInstance} from 'react-select';
 
 interface Options {
   value: string;
@@ -24,7 +24,7 @@ const options: Options[] = [
 
 function Filter() {
   const state = useContext(AppContext);
-  const selectRef = useRef<any>();
+  const selectRef = useRef<SelectInstance<Options> | null>();
   const [isSelectOpen, setIsSelectOpen] = useState(false);
   const [location, setLocation] = useState<Options>(options[0])
 
@@ -33,7 +33,7 @@ function Filter() {
   const selectHandler = () => {
     if(!isSelectOpen) {
       setTimeout(() => {
-        selectRef.current.focus();
+        selectRef.current?.focus();
       });
     };
 
@@ -77,7 +77,11 @@ function Filter() {
       minHeight: '16px',
       height: '16px',
     }),
-
+    menuList: (provided, state) => ({
+      ...provided,
+      fontSize: '12px'
+    }),
+    
   };
 
   return (      <div className={classes}>
@@ -89,35 +93,36 @@ function Filter() {
     </div>
     <div className='flex divide-x'>
       <div className='flex-none basis-1/3 px-4'>
-        <p className='text-base font-bold text-deepblack pb-2'>Locations</p>
-        {
-          !isSelectOpen ? (
-            <p onClick={selectHandler} className='text-xs text-slate-400 flex items-center cursor-pointer'>
-              {location.label}
-              <span className='inline-block ml-1'>
-              <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.0003 8.3997c-.35 0-.7-.135-.965-.4l-3.26-3.26c-.145-.145-.145-.385 0-.53.145-.145.385-.145.53 0l3.26 3.26c.24.24.63.24.87 0l3.26-3.26c.145-.145.385-.145.53 0 .145.145.145.385 0 .53l-3.26 3.26c-.265.265-.615.4-.965.4Z" fill="#1A202C" stroke="#1A202C" strokeWidth=".5"/></svg>
-              </span>
-            </p>
-          ) : (
-            <div className='w-[150px] max-w-[150px]'>
-              <Select
-                onChange={(newValue, actionMeta) => setLocation(newValue as Options)}
-                onBlur={selectHandler}
-                styles={customStyles}
-                ref={selectRef}
-                inputId='select-input'
-                classNamePrefix="select"
-                defaultValue={options[0]}
-                openMenuOnFocus
-                isSearchable
-                name="location-select"
-                options={options}
-                menuPortalTarget={document.body}
-                blurInputOnSelect
-              />
-            </div>
-          )
-        }
+        <div className='w-[150px] max-w-[150px]'>
+          <p className='text-base font-bold text-deepblack pb-2'>Locations</p>
+          {
+            !isSelectOpen ? (
+              <p onClick={selectHandler} className='text-xs text-slate-400 flex items-center cursor-pointer'>
+                {location.label}
+                <span className='inline-block ml-1'>
+                <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.0003 8.3997c-.35 0-.7-.135-.965-.4l-3.26-3.26c-.145-.145-.145-.385 0-.53.145-.145.385-.145.53 0l3.26 3.26c.24.24.63.24.87 0l3.26-3.26c.145-.145.385-.145.53 0 .145.145.145.385 0 .53l-3.26 3.26c-.265.265-.615.4-.965.4Z" fill="#1A202C" stroke="#1A202C" strokeWidth=".5"/></svg>
+                </span>
+              </p>
+            ) : (
+                <Select
+                  onChange={(newValue, actionMeta) => setLocation(newValue as Options)}
+                  onBlur={selectHandler}
+                  styles={customStyles}
+                  ref={element => selectRef.current = element}
+                  inputId='select-input'
+                  classNamePrefix="select"
+                  defaultValue={options[0]}
+                  openMenuOnFocus
+                  isSearchable
+                  name="location-select"
+                  options={options}
+                  menuPortalTarget={document.body}
+                  blurInputOnSelect
+                  maxMenuHeight={200}
+                />
+            )
+          }
+        </div>
 
       </div>
 

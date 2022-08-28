@@ -5,15 +5,21 @@ type Action = {type: ActionType};
 type Dispatch = (action: Action) => void
 type State = {count: number}
 type CountProviderProps = {children: React.ReactNode}
+interface Context {
+    state: State; 
+    dispatch: Dispatch;
+} 
 
 const CountStateContext = React.createContext<
-  {state: State; dispatch: Dispatch} | undefined
->(undefined)
+  Context | undefined
+>(undefined);
 
+// Initial values
 const initialState = {
     count: 0
 }
 
+// Reducer
 function countReducer(state: State, action: Action) {
   switch (action.type) {
     case 'increment': {

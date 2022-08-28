@@ -6,6 +6,7 @@ import Checkout from "./pages/checkout";
 import Layout from "./container/layout/layout";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ScrollToTop from "./util/scroll-to-top/scroll-to-top";
+import { GlobalProvider } from './contexts/global-context';
 
 interface book {
   id: string;
@@ -38,20 +39,22 @@ function App() {
   };
 
   return (
-    <Router>
-      <ScrollToTop>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<HomePage />} />
-            <Route path="cars" element={<AppContext.Provider value={state}>
-              <AllCars />
-            </AppContext.Provider>} />
-            <Route path="car-details" element={<CarDetails />} />
-            <Route path="checkout" element={<Checkout />} />
-          </Route>
-        </Routes>
-      </ScrollToTop>
-    </Router>
+    <GlobalProvider>
+      <Router>
+        <ScrollToTop>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<HomePage />} />
+              <Route path="cars" element={<AppContext.Provider value={state}>
+                <AllCars />
+              </AppContext.Provider>} />
+              <Route path="car-details" element={<CarDetails />} />
+              <Route path="checkout" element={<Checkout />} />
+            </Route>
+          </Routes>
+        </ScrollToTop>
+      </Router>
+    </GlobalProvider>
   )
 }
 

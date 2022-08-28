@@ -16,8 +16,6 @@ function AllCars() {
     });
 
   return (
-    <>
-        <main>
             <div className='container flex gap-8'>
                 {
                     state.isFilterOpen && (
@@ -123,10 +121,6 @@ function AllCars() {
                     </div>
                 </div>
             </div>
-            
-        </main>
-        <Footer />
-    </>
   )
 }
 
