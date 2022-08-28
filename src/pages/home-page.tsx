@@ -1,10 +1,8 @@
 
-import carSuvImg from '../assets/imgs/car-suv.png';
 import Button from '../components/button/button';
 import ProductCard from '../components/product-card/product-card';
 import ProductCardBig from '../components/product-card-big/product-card-big';
 import SectionTitle from '../components/section-title/section-title';
-import Navbar from '../components/navbar/navbar';
 import Filter from '../components/filter/filter';
 import Footer from '../components/footer/footer';
 
@@ -38,15 +36,15 @@ function HomePage() {
     </header>
     <main className='pt-8 lg:pt-16'>
       {/* date filter */}
-      <div className=''>
+      <div className='container'>
         <Filter />
       </div>
       {/* title */}
-      <SectionTitle title='Popular car' />
+      <SectionTitle title='Popular car' to='/cars' />
 
       {/* popular car slider */}
       <div className='container'>
-        <div className='flex gap-5 overflow-hidden p-[1px]'>
+      <div className='overflow-hidden flex gap-5 p-[1px] -mr-4 sm:overflow-auto sm:mr-0 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:gap-8 xl:grid-cols-4'>
           {/* car card */}
           <ProductCard />
           <ProductCard />

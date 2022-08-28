@@ -1,53 +1,60 @@
 import Button from "../button/button";
 import carImg from '../../assets/imgs/car.png';
+import { Link } from "react-router-dom";
 
 function ProductCard() {
   return (
-    <div className="min-w-fit grow-0 shrink-0 bg-white rounded-lg p-4 drop-shadow lg:p-6 lg:w-full">
-    <div className='flex justify-between mb-8 lg:mb-16'>
-      <div>
-        <p className='text-deepblack font-bold text-base capitalize tracking-tighter pb-1 lg:text-xl'>koeniggsegg</p>
-        <p className='text-xs text-slate-400 lg:text-sm'>Sport</p>
-      </div>
-      <div className='text-red-600'>
-        {loveIcon}
-      </div>
-    </div>
-    {/* image */}
-    <div className='flex justify-center mb-11'>
-      <div className='relative w-44 lg:w-56'>
-        <img className='w-full' src={carImg} alt="car" />
-        {/* car shadow */}
-        <div className='absolute -bottom-6 w-[110%] h-full bg-gradient-to-t from-white'></div>
-      </div>
-    </div>
-    {/* Specification */}
-    <div className='flex justify-between mb-7'>
-      <div className='flex text-slate-400'>
-        <span className='inline-block w-3.5 h-3.5 mr-1 lg:mr-2 lg:h-5 lg:w-5'>
-          {gasIcon}
-        </span>
-        <span className='text-xs font-medium lg:text-sm lg:font-normal'>
-          90L
-        </span>
-      </div>
-      <div className='flex text-slate-400'>
-        <span className='inline-block w-3.5 h-3.5 mr-1 lg:mr-2 lg:h-5 lg:w-5'>
-          {gasIcon}
-        </span>
-        <span className='text-xs font-medium lg:text-sm lg:font-normal'>
-          Manual
-        </span>
-      </div>
-      <div className='flex text-slate-400'>
-        <span className='inline-block w-3.5 h-3.5 mr-1 lg:mr-2 lg:h-5 lg:w-5'>
-          {gasIcon}
-        </span>
-        <span className='text-xs font-medium lg:text-sm lg:font-normal'>
-          People
-        </span>
-      </div>
-    </div>
+    <div className="min-w-fit grow-0 shrink-0 bg-white rounded-lg p-4 drop-shadow lg:p-6">
+        <div className='flex justify-between mb-8 lg:mb-16'>
+          <div>
+            <Link to='/car-details'>
+              <p className='text-deepblack font-bold text-base capitalize tracking-tighter pb-1 lg:text-xl'>koeniggsegg</p>
+              <p className='text-xs text-slate-400 lg:text-sm'>Sport</p>
+            </Link>
+          </div>
+          <div className='text-red-600'>
+            <button onClick={() => console.log('clicked fav icon')}>
+              {loveIcon}
+            </button>
+          </div>
+        </div>
+        {/* image */}
+        <div className='flex justify-center mb-11'>
+          <Link to='/car-details'>
+            <div className='relative w-44 lg:w-56'>
+              <img className='w-full' src={carImg} alt="car" />
+              {/* car shadow */}
+              <div className='absolute -bottom-6 w-[110%] h-full bg-gradient-to-t from-white'></div>
+            </div>
+          </Link>
+        </div>
+        {/* Specification */}
+        <div className='flex justify-between mb-7'>
+          <div className='flex text-slate-400'>
+            <span className='inline-block w-3.5 h-3.5 mr-1 lg:mr-2 lg:h-5 lg:w-5'>
+              {gasIcon}
+            </span>
+            <span className='text-xs font-medium lg:text-sm lg:font-normal'>
+              90L
+            </span>
+          </div>
+          <div className='flex text-slate-400'>
+            <span className='inline-block w-3.5 h-3.5 mr-1 lg:mr-2 lg:h-5 lg:w-5'>
+              {gasIcon}
+            </span>
+            <span className='text-xs font-medium lg:text-sm lg:font-normal'>
+              Manual
+            </span>
+          </div>
+          <div className='flex text-slate-400'>
+            <span className='inline-block w-3.5 h-3.5 mr-1 lg:mr-2 lg:h-5 lg:w-5'>
+              {gasIcon}
+            </span>
+            <span className='text-xs font-medium lg:text-sm lg:font-normal'>
+              People
+            </span>
+          </div>
+        </div>
     <div className="flex justify-between items-center">
       <div>
         <span className='text-base text-deepblack font-bold lg:text-xl'>$99.00/ </span>

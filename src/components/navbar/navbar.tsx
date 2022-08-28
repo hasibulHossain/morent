@@ -14,7 +14,7 @@ function Navbar() {
           </div>
           <div className='pt-8 order-3 basis-full lg:pt-0 lg:mr-16 lg:basis-auto'>
             <div className='w-28 lg:w-36'>
-              <a href="#" className='inline-block w-full'>
+              <a href="/" className='inline-block w-full'>
                 <img className='w-full' src={logoSvg} alt="logo" />
               </a>
             </div>
@@ -91,9 +91,9 @@ const gearIcon = <svg width="24" height="24" fill="none" xmlns="http://www.w3.or
 const loveIcon = <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.44 3.1c-1.81 0-3.43.88-4.44 2.23C10.99 3.98 9.37 3.1 7.56 3.1 4.49 3.1 2 5.6 2 8.69c0 1.19.19 2.29.52 3.31 1.58 5 6.45 7.99 8.86 8.81.34.12.9.12 1.24 0 2.41-.82 7.28-3.81 8.86-8.81.33-1.02.52-2.12.52-3.31 0-3.09-2.49-5.59-5.56-5.59Z" fill="currentcolor"/></svg>;
 
 const hamburgerMenu = <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M3 7H21" stroke="#3D5278" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M3 12H21" stroke="#3D5278" stroke-width="1.5" stroke-linecap="round"/>
-<path d="M3 17H21" stroke="#3D5278" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M3 7H21" stroke="#3D5278" strokeWidth="1.5" strokeLinecap="round"/>
+<path d="M3 12H21" stroke="#3D5278" strokeWidth="1.5" strokeLinecap="round"/>
+<path d="M3 17H21" stroke="#3D5278" strokeWidth="1.5" strokeLinecap="round"/>
 </svg>;
 
 export default Navbar
