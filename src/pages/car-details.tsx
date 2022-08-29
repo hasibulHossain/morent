@@ -4,8 +4,10 @@ import Button from '../components/button/button';
 import TextButton from '../components/button/text-button';
 import SectionTitle from '../components/section-title/section-title';
 import ProductCard from '../components/product-card/product-card';
+import { useGlobal } from '../contexts/global-context';
 
 function CarDetails() {
+  const {state} = useGlobal();
   return (
     <>
         <div className='pt-8'>
@@ -151,10 +153,10 @@ function CarDetails() {
 
               <div className='overflow-hidden flex gap-5 p-[1px] -mr-4 sm:overflow-auto sm:mr-0 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:gap-8 xl:grid-cols-4'>
                 {/* car card */}
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
+                <ProductCard car={state.cars[0]} />
+                <ProductCard car={state.cars[0]} />
+                <ProductCard car={state.cars[0]} />
+                <ProductCard car={state.cars[0]} />
               </div>
             {/* title */}
             <SectionTitle title='Popular car' />
@@ -162,10 +164,10 @@ function CarDetails() {
             {/* popular car slider */}
               <div className='overflow-hidden flex gap-5 p-[1px] -mr-4 sm:overflow-auto sm:mr-0 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:gap-8 xl:grid-cols-4'>
                 {/* car card */}
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
+                <ProductCard car={state.cars[0]} />
+                <ProductCard car={state.cars[0]} />
+                <ProductCard car={state.cars[0]} />
+                <ProductCard car={state.cars[0]} />
               </div>
             </div>
         </div>

@@ -4,8 +4,10 @@ import ProductCard from '../components/product-card/product-card';
 import ProductCardBig from '../components/product-card-big/product-card-big';
 import SectionTitle from '../components/section-title/section-title';
 import Filter from '../components/filter/filter';
+import { useGlobal } from '../contexts/global-context';
 
 function HomePage() {
+  const {state} = useGlobal();
   return (
     <>
     {/* hero section */}
@@ -45,10 +47,10 @@ function HomePage() {
       <div className='container'>
       <div className='overflow-hidden flex gap-5 p-[1px] -mr-4 sm:overflow-auto sm:mr-0 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:gap-8 xl:grid-cols-4'>
           {/* car card */}
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          <ProductCard car={state.cars[0]} />
+          <ProductCard car={state.cars[0]} />
+          <ProductCard car={state.cars[0]} />
+          <ProductCard car={state.cars[0]} />
         </div>
       </div>
 

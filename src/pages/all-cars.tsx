@@ -6,9 +6,12 @@ import classNames from 'classnames';
 import { AppContext } from '../App';
 import Footer from '../components/footer/footer';
 import Button from '../components/button/button';
+import { useGlobal } from '../contexts/global-context';
 
 function AllCars() {
     const state = useContext(AppContext);
+    const {state: appState } = useGlobal();
+    const { cars } = appState;
 
     const classes = classNames('pt-8 grid grid-cols-1  gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-4 lg:gap-8', {
         'lg:grid-cols-2 xl:grid-cols-3': state.isFilterOpen,
@@ -100,14 +103,11 @@ function AllCars() {
                 <div className='flex-auto pt-8'>
                     <Filter />
                     <div className={classes} onClick={() => state.setIsFilterOpen(true)}>
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
+                        {
+                            cars.map(car => (
+                                <ProductCard car={car} key={car.id} />
+                            ))
+                        }
                     </div>
                     <div className='container py-12'>
                         <div className='flex justify-end'>

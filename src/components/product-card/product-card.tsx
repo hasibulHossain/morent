@@ -1,15 +1,25 @@
+import { FC } from 'react';
 import Button from "../button/button";
 import carImg from '../../assets/imgs/car.png';
 import { Link } from "react-router-dom";
+import { Car } from "../../types";
 
-function ProductCard() {
+interface Props {
+  car: Car
+}
+
+const ProductCard:FC<Props> = ({car}) => {
   return (
     <div className="min-w-fit grow-0 shrink-0 bg-white rounded-lg p-4 drop-shadow lg:p-6">
         <div className='flex justify-between mb-8 lg:mb-16'>
           <div>
             <Link to='/car-details'>
-              <p className='text-deepblack font-bold text-base capitalize tracking-tighter pb-1 lg:text-xl'>koeniggsegg</p>
-              <p className='text-xs text-slate-400 lg:text-sm'>Sport</p>
+              <p className='text-deepblack font-bold text-base capitalize tracking-tighter pb-1 lg:text-xl'>
+                {car?.name}
+              </p>
+              <p className='text-xs text-slate-400 lg:text-sm'>
+                {car?.category.name}
+              </p>
             </Link>
           </div>
           <div className='text-red-600'>
@@ -35,7 +45,9 @@ function ProductCard() {
               {gasIcon}
             </span>
             <span className='text-xs font-medium lg:text-sm lg:font-normal'>
-              90L
+              {
+                car?.specification?.gasoline
+              }
             </span>
           </div>
           <div className='flex text-slate-400'>
@@ -43,7 +55,9 @@ function ProductCard() {
               {gasIcon}
             </span>
             <span className='text-xs font-medium lg:text-sm lg:font-normal'>
-              Manual
+              {
+                car?.specification?.steering
+              }
             </span>
           </div>
           <div className='flex text-slate-400'>
@@ -51,13 +65,20 @@ function ProductCard() {
               {gasIcon}
             </span>
             <span className='text-xs font-medium lg:text-sm lg:font-normal'>
-              People
+              {
+                car?.specification?.capacity
+              }
             </span>
           </div>
         </div>
     <div className="flex justify-between items-center">
       <div>
-        <span className='text-base text-deepblack font-bold lg:text-xl'>$99.00/ </span>
+        <span className='text-base text-deepblack font-bold lg:text-xl'>
+          $
+          {
+            car.price.toFixed(2) 
+          }/
+        </span>
         <span className='text-xs text-slate-400 lg:text-sm'>day</span>
       </div>
       <Button classes="md:px-3 md:py-2" onClick={() => {}}>
