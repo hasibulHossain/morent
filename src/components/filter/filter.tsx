@@ -8,6 +8,12 @@ interface Options {
   label: string;
 }
 
+type Page = 'homepage' | 'all-cars'
+
+interface Props {
+  renderedOn?: Page;
+}
+
 type IsMulti = false;
 
 const options: Options[] = [
@@ -22,13 +28,12 @@ const options: Options[] = [
   { value: 'Gazipur', label: 'Gazipur' },
 ];
 
-function Filter() {
+
+const Filter:React.FC<Props> = ({ renderedOn }) => {
   const state = useContext(AppContext);
   const selectRef = useRef<SelectInstance<Options> | null>();
   const [isSelectOpen, setIsSelectOpen] = useState(false);
   const [location, setLocation] = useState<Options>(options[0])
-
-  console.log(selectRef);
 
   const selectHandler = () => {
     if(!isSelectOpen) {
@@ -47,6 +52,10 @@ function Filter() {
   const filterInterchangeClasses = classNames('p-4 bg-primaryblue drop-shadow text-white grow-0 self-center rounded-lg z-10 -my-3 md:-mx-2', {
     'lg:-my-4 xl:-mx-2': state.isFilterOpen,
     'lg:my-0 lg:mx-11': !state.isFilterOpen,
+  })
+
+  const filterLocationClasses = classNames('w-[80px]', {
+    'lg:w-40': !state.isFilterOpen && renderedOn !== 'all-cars',
   })
 
   const customStyles: StylesConfig<Options, IsMulti> = {
@@ -93,7 +102,7 @@ function Filter() {
     </div>
     <div className='flex divide-x'>
       <div className='flex-none basis-1/3 px-4'>
-        <div className='w-[150px] max-w-[150px]'>
+        <div className={filterLocationClasses}>
           <p className='text-base font-bold text-deepblack pb-2'>Locations</p>
           {
             !isSelectOpen ? (
@@ -128,21 +137,21 @@ function Filter() {
 
       <div className='flex-auto px-4'>
         <p className='text-base font-bold text-deepblack pb-2'>Date</p>
-        <p className='text-xs text-slate-400 flex items-center cursor-pointer'>
-          20 Jul 2022
-          <span className='inline-block ml-1'>
-          <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.0003 8.3997c-.35 0-.7-.135-.965-.4l-3.26-3.26c-.145-.145-.145-.385 0-.53.145-.145.385-.145.53 0l3.26 3.26c.24.24.63.24.87 0l3.26-3.26c.145-.145.385-.145.53 0 .145.145.145.385 0 .53l-3.26 3.26c-.265.265-.615.4-.965.4Z" fill="#1A202C" stroke="#1A202C" strokeWidth=".5"/></svg>
-          </span>
-        </p>
+          <p className='text-xs text-slate-400 flex items-center cursor-pointer'>
+            20 Jul 2022
+            <span className='inline-block ml-1'>
+            <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.0003 8.3997c-.35 0-.7-.135-.965-.4l-3.26-3.26c-.145-.145-.145-.385 0-.53.145-.145.385-.145.53 0l3.26 3.26c.24.24.63.24.87 0l3.26-3.26c.145-.145.385-.145.53 0 .145.145.145.385 0 .53l-3.26 3.26c-.265.265-.615.4-.965.4Z" fill="#1A202C" stroke="#1A202C" strokeWidth=".5"/></svg>
+            </span>
+          </p>
       </div>
       <div className='flex-auto px-4'>
         <p className='text-base font-bold text-deepblack pb-2'>Time</p>
-        <p className='text-xs text-slate-400 flex items-center cursor-pointer'>
-          07:00
-          <span className='inline-block ml-1'>
-          <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.0003 8.3997c-.35 0-.7-.135-.965-.4l-3.26-3.26c-.145-.145-.145-.385 0-.53.145-.145.385-.145.53 0l3.26 3.26c.24.24.63.24.87 0l3.26-3.26c.145-.145.385-.145.53 0 .145.145.145.385 0 .53l-3.26 3.26c-.265.265-.615.4-.965.4Z" fill="#1A202C" stroke="#1A202C" strokeWidth=".5"/></svg>
-          </span>
-        </p>
+          <p className='text-xs text-slate-400 flex items-center cursor-pointer'>
+            07:00
+            <span className='inline-block ml-1'>
+            <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.0003 8.3997c-.35 0-.7-.135-.965-.4l-3.26-3.26c-.145-.145-.145-.385 0-.53.145-.145.385-.145.53 0l3.26 3.26c.24.24.63.24.87 0l3.26-3.26c.145-.145.385-.145.53 0 .145.145.145.385 0 .53l-3.26 3.26c-.265.265-.615.4-.965.4Z" fill="#1A202C" stroke="#1A202C" strokeWidth=".5"/></svg>
+            </span>
+          </p>
       </div>
     </div>
   </div>
@@ -157,6 +166,7 @@ function Filter() {
     </div>
     <div className='flex divide-x'>
       <div className='flex-auto px-4'>
+      <div className={filterLocationClasses}>
         <p className='text-base font-bold text-deepblack pb-2'>Locations</p>
         <p className='text-xs text-slate-400 flex items-center cursor-pointer'>
           Semarang
@@ -165,14 +175,15 @@ function Filter() {
           </span>
         </p>
       </div>
+      </div>
       <div className='flex-auto px-4'>
-        <p className='text-base font-bold text-deepblack pb-2'>Date</p>
-        <p className='text-xs text-slate-400 flex items-center cursor-pointer'>
-          20 Jul 2022
-          <span className='inline-block ml-1'>
-          <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.0003 8.3997c-.35 0-.7-.135-.965-.4l-3.26-3.26c-.145-.145-.145-.385 0-.53.145-.145.385-.145.53 0l3.26 3.26c.24.24.63.24.87 0l3.26-3.26c.145-.145.385-.145.53 0 .145.145.145.385 0 .53l-3.26 3.26c-.265.265-.615.4-.965.4Z" fill="#1A202C" stroke="#1A202C" strokeWidth=".5"/></svg>
-          </span>
-        </p>
+          <p className='text-base font-bold text-deepblack pb-2'>Date</p>
+          <p className='text-xs text-slate-400 flex items-center cursor-pointer'>
+            20 Jul 2022
+            <span className='inline-block ml-1'>
+            <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.0003 8.3997c-.35 0-.7-.135-.965-.4l-3.26-3.26c-.145-.145-.145-.385 0-.53.145-.145.385-.145.53 0l3.26 3.26c.24.24.63.24.87 0l3.26-3.26c.145-.145.385-.145.53 0 .145.145.145.385 0 .53l-3.26 3.26c-.265.265-.615.4-.965.4Z" fill="#1A202C" stroke="#1A202C" strokeWidth=".5"/></svg>
+            </span>
+          </p>
       </div>
       <div className='flex-auto px-4'>
         <p className='text-base font-bold text-deepblack pb-2'>Time</p>

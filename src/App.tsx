@@ -31,7 +31,6 @@ function App() {
 
 
   function toggleIsFilterOpen (currentState: boolean): void {
-    console.log('clicked => ', currentState)
     setState(previousState => ({
       ...previousState,
       isFilterOpen: currentState,

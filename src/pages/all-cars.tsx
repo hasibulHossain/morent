@@ -7,6 +7,7 @@ import { AppContext } from '../App';
 import Footer from '../components/footer/footer';
 import Button from '../components/button/button';
 import { useGlobal } from '../contexts/global-context';
+import {ReactComponent as  Icon} from '../assets/svgs/close-icon.svg';
 
 function AllCars() {
     const state = useContext(AppContext);
@@ -22,38 +23,38 @@ function AllCars() {
             <div className='container flex gap-8'>
                 {
                     state.isFilterOpen && (
-                        <div className='hidden flex-none lg:block w-80 bg-white p-8' onClick={() => state.setIsFilterOpen(false)}>
+                        <div className='hidden flex-none lg:block w-80 bg-white p-8'>
                             <div className='pb-10'>
                                 <span className='block mb-7 uppercase text-slate-400 tracking-wider'>type</span>
-                                <label className='flex items-center mb-6'>
+                                <label className='flex items-center mb-6 cursor-pointer'>
                                     <input type="checkbox" className="form-checkbox rounded text-primaryblue mr-3 border-slate-400 focus:ring-0" />
                                     <div>
                                         <span className='text-xl text-navy font-medium'>Sport </span>
                                         <span className='text-slate-400'> (12)</span>
                                     </div>
                                 </label>
-                                <label className='flex items-center mb-6'>
+                                <label className='flex items-center mb-6 cursor-pointer'>
                                     <input type="checkbox" className="form-checkbox rounded text-primaryblue mr-3 border-slate-400 focus:ring-0" />
                                     <div>
                                         <span className='text-xl text-navy font-medium'>suv </span>
                                         <span className='text-slate-400'> (10)</span>
                                     </div>
                                 </label>
-                                <label className='flex items-center mb-6'>
+                                <label className='flex items-center mb-6 cursor-pointer'>
                                     <input type="checkbox" className="form-checkbox rounded text-primaryblue mr-3 border-slate-400 focus:ring-0" />
                                     <div>
                                         <span className='text-xl text-navy font-medium'>mpv </span>
                                         <span className='text-slate-400'> (16)</span>
                                     </div>
                                 </label>
-                                <label className='flex items-center mb-6'>
+                                <label className='flex items-center mb-6 cursor-pointer'>
                                     <input type="checkbox" className="form-checkbox rounded text-primaryblue mr-3 border-slate-400 focus:ring-0" />
                                     <div>
                                         <span className='text-xl text-navy font-medium'>sedan </span>
                                         <span className='text-slate-400'> (20)</span>
                                     </div>
                                 </label>
-                                <label className='flex items-center mb-6'>
+                                <label className='flex items-center mb-6 cursor-pointer'>
                                     <input type="checkbox" className="form-checkbox rounded text-primaryblue mr-3 border-slate-400 focus:ring-0" />
                                     <div>
                                         <span className='text-xl text-navy font-medium'>coupe </span>
@@ -62,32 +63,32 @@ function AllCars() {
                                 </label>
                             </div>
                             <div className='pb-10'>
-                                <span className='block mb-7 uppercase text-slate-400 tracking-wider'>type</span>
-                                <label className='flex items-center mb-6'>
+                                <span className='block mb-7 uppercase text-slate-400 tracking-wider'>Capacity</span>
+                                <label className='flex items-center mb-6 cursor-pointer'>
                                     <input type="checkbox" className="form-checkbox rounded text-primaryblue mr-3 border-slate-400 focus:ring-0" />
                                     <div>
-                                        <span className='text-xl text-navy font-medium'>Sport </span>
+                                        <span className='text-xl text-navy font-medium'>2 Person </span>
                                         <span className='text-slate-400'> (12)</span>
                                     </div>
                                 </label>
-                                <label className='flex items-center mb-6'>
+                                <label className='flex items-center mb-6 cursor-pointer'>
                                     <input type="checkbox" className="form-checkbox rounded text-primaryblue mr-3 border-slate-400 focus:ring-0" />
                                     <div>
-                                        <span className='text-xl text-navy font-medium'>Sport </span>
+                                        <span className='text-xl text-navy font-medium'>4 Person </span>
                                         <span className='text-slate-400'> (12)</span>
                                     </div>
                                 </label>
-                                <label className='flex items-center mb-6'>
+                                <label className='flex items-center mb-6 cursor-pointer'>
                                     <input type="checkbox" className="form-checkbox rounded text-primaryblue mr-3 border-slate-400 focus:ring-0" />
                                     <div>
-                                        <span className='text-xl text-navy font-medium'>Sport </span>
+                                        <span className='text-xl text-navy font-medium'>6 Person </span>
                                         <span className='text-slate-400'> (12)</span>
                                     </div>
                                 </label>
-                                <label className='flex items-center mb-6'>
+                                <label className='flex items-center mb-6 cursor-pointer'>
                                     <input type="checkbox" className="form-checkbox rounded text-primaryblue mr-3 border-slate-400 focus:ring-0" />
                                     <div>
-                                        <span className='text-xl text-navy font-medium'>Sport </span>
+                                        <span className='text-xl text-navy font-medium'>8 Person </span>
                                         <span className='text-slate-400'> (12)</span>
                                     </div>
                                 </label>
@@ -101,8 +102,8 @@ function AllCars() {
                     )
                 }
                 <div className='flex-auto pt-8'>
-                    <Filter />
-                    <div className={classes} onClick={() => state.setIsFilterOpen(true)}>
+                    <Filter renderedOn='all-cars' />
+                    <div className={classes}>
                         {
                             cars.map(car => (
                                 <ProductCard car={car} key={car.id} />

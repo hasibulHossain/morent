@@ -8,10 +8,11 @@ import { useGlobal } from '../contexts/global-context';
 
 function HomePage() {
   const {state} = useGlobal();
+
   return (
     <>
     {/* hero section */}
-    <header className='pt-8'>
+    <div className='pt-8'>
       <div className='container'>
         <div className='flex gap-8'>
           <div className='bg-ads-1 w-full aspect-[3.27/2.32] bg-cover bg-no-repeat rounded-lg p-4 lg:aspect-[6.4/3.6] lg:bg-ads-1-large lg:bg-center'>
@@ -34,11 +35,11 @@ function HomePage() {
           </div>
         </div>
       </div>
-    </header>
-    <main className='pt-8 lg:pt-16'>
+    </div>
+    <div className='pt-8 lg:pt-16'>
       {/* date filter */}
       <div className='container'>
-        <Filter />
+        <Filter renderedOn='homepage' />
       </div>
       {/* title */}
       <SectionTitle title='Popular car' to='/cars' />
@@ -75,7 +76,7 @@ function HomePage() {
           </div>
         </div>
       </div>
-    </main>
+    </div>
     </>
   )
 }

@@ -23,9 +23,10 @@ function Navbar() {
           <div className="flex order-last basis-full mt-8 lg:m-0 lg:basis-3/5">
             <div className="flex grow items-center py-3 px-6 border border-slate-200 text-slate-700 rounded-lg lg:rounded-full">
               {searchIcon}
-              <span className="w-fit text-sm pl-6">
+              <input type="text" className='w-full border-none outline-none px-5' placeholder='Search something here' />
+              {/* <span className="w-fit text-sm pl-6">
                 Search something here
-              </span>
+              </span> */}
             </div>
             <div className="group relative flex-none items-center p-3 ml-3 border border-slate-200 rounded-lg text-slate-700 cursor-pointer lg:hidden">
               {filterIcon}
