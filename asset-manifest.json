@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/morent/static/css/main.0c4ab6e9.css",
-    "main.js": "/morent/static/js/main.db4bd4e6.js",
+    "main.js": "/morent/static/js/main.e47c4e4a.js",
     "static/js/787.d9fdfb85.chunk.js": "/morent/static/js/787.d9fdfb85.chunk.js",
     "static/media/ads-1-lg.jpg": "/morent/static/media/ads-1-lg.4132e39e06c3fa4377f4.jpg",
     "static/media/ads-2-lg.jpg": "/morent/static/media/ads-2-lg.5b37c0cce2d6ad99c073.jpg",
@@ -12,11 +12,11 @@
     "static/media/morent-logo.svg": "/morent/static/media/morent-logo.2a592636d98c211ccc131e68a9db7925.svg",
     "index.html": "/morent/index.html",
     "main.0c4ab6e9.css.map": "/morent/static/css/main.0c4ab6e9.css.map",
-    "main.db4bd4e6.js.map": "/morent/static/js/main.db4bd4e6.js.map",
+    "main.e47c4e4a.js.map": "/morent/static/js/main.e47c4e4a.js.map",
     "787.d9fdfb85.chunk.js.map": "/morent/static/js/787.d9fdfb85.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0c4ab6e9.css",
-    "static/js/main.db4bd4e6.js"
+    "static/js/main.e47c4e4a.js"
   ]
 }
