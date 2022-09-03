@@ -39,7 +39,7 @@ function App() {
 
   return (
     <GlobalProvider>
-      <Router basename="/morent">
+      <Router basename="/hasibulHossain/morent/">
         <ScrollToTop>
           <Routes>
             <Route path="/" element={<Layout />}>
