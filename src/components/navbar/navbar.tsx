@@ -1,6 +1,7 @@
 import React from 'react'
 import logoSvg from '../../assets/svgs/morent-logo.svg';
 import Tooltip from '../tooltip/tooltip';
+import {Link} from 'react-router-dom';
 
 function Navbar() {
   return (
@@ -14,9 +15,9 @@ function Navbar() {
           </div>
           <div className='pt-8 order-3 basis-full lg:pt-0 lg:mr-16 lg:basis-auto'>
             <div className='w-28 lg:w-36'>
-              <a href="/" className='inline-block w-full'>
+              <Link to='/' className='inline-block w-full'>
                 <img className='w-full' src={logoSvg} alt="logo" />
-              </a>
+              </Link>
             </div>
           </div>
           {/* search and filter */}
