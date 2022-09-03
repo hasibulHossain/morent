@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hasibulHossain/morent/static/css/main.c23cdeff.css",
-    "main.js": "/hasibulHossain/morent/static/js/main.0c7b4a10.js",
+    "main.js": "/hasibulHossain/morent/static/js/main.c0b6721a.js",
     "static/js/787.d9fdfb85.chunk.js": "/hasibulHossain/morent/static/js/787.d9fdfb85.chunk.js",
     "static/media/ads-1-lg.jpg": "/hasibulHossain/morent/static/media/ads-1-lg.4132e39e06c3fa4377f4.jpg",
     "static/media/ads-2-lg.jpg": "/hasibulHossain/morent/static/media/ads-2-lg.5b37c0cce2d6ad99c073.jpg",
@@ -12,11 +12,11 @@
     "static/media/morent-logo.svg": "/hasibulHossain/morent/static/media/morent-logo.2a592636d98c211ccc131e68a9db7925.svg",
     "index.html": "/hasibulHossain/morent/index.html",
     "main.c23cdeff.css.map": "/hasibulHossain/morent/static/css/main.c23cdeff.css.map",
-    "main.0c7b4a10.js.map": "/hasibulHossain/morent/static/js/main.0c7b4a10.js.map",
+    "main.c0b6721a.js.map": "/hasibulHossain/morent/static/js/main.c0b6721a.js.map",
     "787.d9fdfb85.chunk.js.map": "/hasibulHossain/morent/static/js/787.d9fdfb85.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c23cdeff.css",
-    "static/js/main.0c7b4a10.js"
+    "static/js/main.c0b6721a.js"
   ]
 }
